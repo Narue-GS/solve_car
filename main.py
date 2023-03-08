@@ -21,6 +21,7 @@ def run_program():
       car.append(product)
       choice = input("Deseja inserir mais itens?(s/n): ")
       if choice == "n": break
+      if len(car) >= 10: print("Número máximo de produtos excedido."); break
   total = sum(list(map(lambda item: item['price'], car)))
   print(f"total: {total}")
   print(*list(map(lambda product: f"{product['name']} --- R${product['price']}\n", car)))
